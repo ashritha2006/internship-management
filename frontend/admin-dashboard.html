@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Internship Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="navbar">
+      <div class="nav-brand">
+        <h2>Admin Dashboard</h2>
+      </div>
+      <div class="nav-user">
+        <span id="adminInfo">Admin</span>
+        <button onclick="logout()" class="btn-secondary">Logout</button>
+      </div>
+    </div>
+
+    <div class="dashboard-content">
+      <div class="stats-section">
+        <div class="stat-card">
+          <h3>Total Internships</h3>
+          <div class="stat-number" id="totalCount">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Pending Approval</h3>
+          <div class="stat-number" id="pendingCount">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Approved</h3>
+          <div class="stat-number" id="approvedCount">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Declined</h3>
+          <div class="stat-number" id="declinedCount">0</div>
+        </div>
+        <div class="stat-card stat-card-affidavit-yes">
+          <h3>With Affidavit</h3>
+          <div class="stat-number stat-number-green" id="withAffidavitCount">0</div>
+        </div>
+        <div class="stat-card stat-card-affidavit-no">
+          <h3>Without Affidavit</h3>
+          <div class="stat-number stat-number-red" id="withoutAffidavitCount">0</div>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <div class="form-group">
+          <input type="text" id="searchInput" placeholder="Search by student name, roll number, company..." onkeyup="applySearch()">
+        </div>
+        <div class="form-group">
+          <select id="statusFilter" onchange="applyFilter()" title="Filter by Status">
+            <option value="">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="declined">Declined</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select id="affidavitFilter" onchange="applyFilter()" title="Filter by Affidavit">
+            <option value="">All Affidavit</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select id="departmentFilter" onchange="applyFilter()" title="Filter by Department">
+            <option value="">All Departments</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Information Technology">Information Technology</option>
+          </select>
+        </div>
+        <button onclick="exportFiltered()" class="btn-primary">Export Filtered</button>
+      </div>
+
+      <div class="bulk-actions-section">
+        <h3>Bulk Actions Based on Affidavit</h3>
+        <div class="bulk-actions-buttons">
+          <button onclick="declineAllNoAffidavit()" class="btn-danger btn-bulk-action">
+            Decline All with "No" Affidavit
+          </button>
+          <button onclick="approveAllYesAffidavit()" class="btn-success btn-bulk-action">
+            Approve All with "Yes" Affidavit
+          </button>
+          <span id="bulkActionInfo" class="bulk-action-info"></span>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="internshipTable">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Roll Number</th>
+              <th>Department</th>
+              <th>Email</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Duration</th>
+              <th>Semester</th>
+              <th>Affidavit</th>
+              <th>Academic Year</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>

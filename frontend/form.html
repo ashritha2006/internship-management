@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Internship</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <button onclick="location.href='index.html'">🏠 Dashboard</button>
+  </nav>
+
+  <div class="form-container">
+    <h2>Enter Internship Details</h2>
+    <form id="internshipForm">
+      <input type="text" id="studentName" placeholder="Student Name" required>
+      <input type="text" id="rollNumber" placeholder="Roll Number" required>
+      <input type="text" id="department" placeholder="Department" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="companyName" placeholder="Company Name" required>
+      <input type="text" id="location" placeholder="Location" required>
+      <input type="date" id="startDate" required>
+      <input type="date" id="endDate" required>
+      <input type="text" id="duration" placeholder="Duration (weeks/months)" required>
+      <input type="number" id="stipend" placeholder="Stipend" required>
+      <input type="text" id="mentorName" placeholder="Mentor Name" required>
+      <input type="text" id="mentorContact" placeholder="Mentor Contact" required>
+      <input type="text" id="mentorRole" placeholder="Mentor Role" required>
+
+      <button type="submit">💾 Save Internship</button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

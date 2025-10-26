@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://internship-management-buoe.onrender.com/api/auth';
 
 // Tab switching
 function showAuthTab(tabName) {

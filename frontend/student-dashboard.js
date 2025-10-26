@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/internships';
+const API_URL = 'https://internship-management-buoe.onrender.com/api/internships';
 let allInternships = [];
 let filteredInternships = [];
 let currentUser = null;
